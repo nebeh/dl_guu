@@ -14,7 +14,15 @@ end
 
     dx = 1/8;
     [x,y] = meshgrid(-3:dx:3);
+  figure
+    surf(x,y,z)
 
+   figure(2)
+    contour(x,y,z,50)
+    axis('tight')
+    xlabel('x'), ylabel('y'), title('Peaks')
+    grid on
+    g = gca;
 
 
 z =  3*(1-x).^2.*exp(-(x.^2) - (y+1).^2) ...

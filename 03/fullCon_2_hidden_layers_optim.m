@@ -19,8 +19,6 @@ for i = 1:epoch
     for j = 1:size(x,2)
         X = x(:,j); Y = t(:,j);
      [grad,loss] = dlfeval(@modelGradients,params,X,Y);
-     % [params,trailingAvg,trailingAvgSq] = adamupdate(params,grad, ...
-      %      trailingAvg,trailingAverageSq,i);
       [params,vel] = sgdmupdate(params,grad,vel,0.003);
     end
       disp(loss)

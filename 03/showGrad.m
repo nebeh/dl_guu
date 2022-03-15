@@ -14,8 +14,8 @@ f.Position= [1 1 1920 1004];
 
 
 hold on
-eps = 1; X = 1;
-eta =  5;
+eps = 1e-2; X = 1;
+eta =  1e-1;
 i = 1;
 while eps>1e-6 && i < 20
     dx = -eta*g(X);
