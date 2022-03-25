@@ -35,6 +35,7 @@ class Autoencoder(nn.Module):
             nn.ReLU(True),
             nn.Conv2d(6,16,kernel_size=5),
             nn.ReLU(True))
+        
 
         self.decoder = nn.Sequential(             
             nn.ConvTranspose2d(16,6,kernel_size=5),
@@ -48,6 +49,29 @@ class Autoencoder(nn.Module):
         x = self.decoder(x)
         return x
 
+    # def __init__(self, mode):
+    #     super(MNIST_Net,self).__init__()
+    #     self.fc1 = nn.Linear(784, 512)
+    #     self.fc2 = nn.Linear(512,256)
+    #     self.fc3 = nn.Linear(256, 512)
+    #     self.fc4 = nn.Linear(512, 784)
+    #     if mode == 'autoencoder':
+    #         self.mode = 'autoencoder'
+    #     else:
+    #         self.mode = 'classification'
+    #         self.fc5 = nn.Linear(784, 10)
+        
+    # def forward(self, inputs):
+    #     x = inputs.view(inputs.size(0),-1)
+    #     x = F.relu(self.fc1(x))
+    #     x = F.relu(self.fc2(x))
+    #     x = F.relu(self.fc3(x))
+    #     x = F.relu(self.fc4(x))
+    #     if self.mode == 'autoencoder':
+    #         return x
+    #     elif self.mode == 'classification':
+    #         x = self.fc5(x)
+    #         return x
 
 # Defining Parameters
 
